@@ -11,15 +11,31 @@
             padding: 0;
         }
 
-        .fundo {
-            background-image: linear-gradient(45deg, rgb(92, 83, 83), #164b91);
+        body {
+            background-image: linear-gradient(45deg, rgb(248, 246, 246), #317ee4);
             height: 100vh;
             color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
+        
+        .dark-mode{
+            background-image: linear-gradient(45deg, rgb(0, 0, 0), #490f1b);
+        }
+        
+        .fundo input{
+            color:white;
+            background-color: #63617aa8;
+            position: absolute;
+            top: 9%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            padding: 4px;
+        }
+        
         .calculadora {
             position: absolute;
-            background-color: #411d1d8f;
+            background-color: #8b5c5c8f;
             top:50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -35,7 +51,7 @@
             font-size: 25px;
             margin: 3px;
             cursor: pointer;
-            background-color: #9388F7;
+            background-color: #5e81c280;
             color: white;
         }
         
@@ -54,6 +70,9 @@
 </head>
 <body>
     <div class="fundo">
+        <div class="first-step">
+        <input type="button" value="Tema Escuro / Claro" onclick="mode()">
+        </div>
         <div class="calculadora">
             <h1>
                 Calculadora
@@ -117,7 +136,10 @@
             else {
                 document.getElementById('resultado').innerHTML = "" 
             }
-
+        }
+        function mode() {
+            let change = window.document.body;
+            change.classList.toggle("dark-mode");
         }
 
 
